@@ -1,21 +1,20 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 const port = process.env.PORT || 3000;
+
 module.exports = {
-  mode: process.env.NODE_ENV || "development", // 1
-  entry: "./src/index.js", // 2
+  mode: process.env.NODE_ENV || "development",
+  entry: "./src/index.js",
   output: {
-    // 3
-    filename: "bundle.[hash].js", // 4
+    filename: "bundle.[hash].js",
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: 'public/index.html',
-    })
+      template: "public/index.html",
+    }),
   ],
   module: {
     rules: [
       {
-        // 1
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: {
@@ -23,7 +22,6 @@ module.exports = {
         },
       },
       {
-        // 2
         test: /\.html$/,
         use: [
           {
@@ -36,9 +34,9 @@ module.exports = {
       },
     ],
   },
-  devServer:{
-    host: 'localhost',
+  devServer: {
+    host: "localhost",
     port: port,
-    historyApiFallback: true
-  }
+    historyApiFallback: true,
+  },
 };
