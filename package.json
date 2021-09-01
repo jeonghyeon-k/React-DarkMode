@@ -1,14 +1,14 @@
 {
-  "name": "React-webpack",
+  "name": "React-webpack-Starter",
   "version": "1.0.0",
-  "description": "",
+  "description": "React webpack starter template",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["react","webpack","babel","starter"],
+  "author": "김정현",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.15.0",
