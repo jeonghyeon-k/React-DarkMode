@@ -1,4 +1,5 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const port = process.env.PORT || 8080;
 
 module.exports = {
@@ -10,6 +11,9 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: "public/index.html",
+    }),
+    new MiniCssExtractPlugin({ 
+      filename: "app.css"
     }),
   ],
   module: {
@@ -32,11 +36,15 @@ module.exports = {
           },
         ],
       },
+      {
+        test: /\.css$/,
+        use: ["style-loader", "css-loader"],
+      },
     ],
   },
   resolve: {
-    modules: ['node_modules'],
-    extensions: ['.js', '.jsx']
+    modules: ["node_modules"],
+    extensions: [".js", ".jsx"],
   },
   devServer: {
     host: "localhost",
