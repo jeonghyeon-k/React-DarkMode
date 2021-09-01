@@ -15,7 +15,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/,
+        test: /\.(jsx|js)$/,
         exclude: /node_modules/,
         use: {
           loader: "babel-loader",
@@ -33,6 +33,10 @@ module.exports = {
         ],
       },
     ],
+  },
+  resolve: {
+    modules: ['node_modules'],
+    extensions: ['.js', '.jsx']
   },
   devServer: {
     host: "localhost",
