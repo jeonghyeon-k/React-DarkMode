@@ -1,17 +1,41 @@
 :root[color-theme="light"] {
-  --background: #fff;
+  --general-background: #fff;
+  --general-color-a: #f7f9fa;
+  --general-color-b: #f2f2f2;
   --TextColor: #000;
 }
 
 :root[color-theme="dark"] {
-  --background: #000;
+  --general-background: #1e1f21;
+  --general-color-a: #2c2d30;
+  --general-color-b: #292a2d;
   --TextColor: #fff;
 }
-
-.box {
-  background: var(--background);
+body {
+  background: var(--general-background);
+  margin: 20px 0;
+}
+.checkbox {
+  width: 36px;
+  height: 36px;
+}
+.text {
+  font-size: 36px;
+  color: var(--TextColor);
 }
 
-.content {
+.box1 {
+  height: 100px;
+  background: var(--general-color-a);
   color: var(--TextColor);
+  font-size: 24px;
+  align-items: center;
+  text-align: center;
+}
+.box2 {
+  height: 100px;
+  background: var(--general-color-b);
+  color: var(--TextColor);
+  font-size: 24px;
+  text-align: center;
 }

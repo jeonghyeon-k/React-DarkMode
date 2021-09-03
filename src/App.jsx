@@ -13,7 +13,6 @@ if (getUserTheme === "dark") {
 }
 
 function App() {
-
   const [check, setcheck] = useState(getUserTheme);
   const onCheck = () => {
     setcheck(check => (check === "dark" ? "light" : "dark"));
@@ -27,14 +26,16 @@ function App() {
       document.documentElement.setAttribute("color-theme", "dark");
     }
   }, [check]);
-  
+
   const list = { dark: true, light: false };
   return (
-    <div className="box">
-      <input onClick={onCheck} type="checkbox" checked={list[check]} readOnly />
-      <div className="content">
+    <div>
+      <input className="checkbox" onClick={onCheck} type="checkbox" checked={list[check]} readOnly />
+      <div className="text">
         Hello, <strong>{check}</strong> Thema!
       </div>
+      <div className="box1">Box1</div>
+      <div className="box2">Box2</div>
     </div>
   );
 }
